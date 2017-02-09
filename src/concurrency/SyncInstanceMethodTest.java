@@ -1,0 +1,34 @@
+package concurrency;
+
+import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.TimeUnit;
+
+import static java.util.concurrent.TimeUnit.*;
+
+/**
+ * Created by Sabaresh on 5/20/2016.
+ */
+public class SyncInstanceMethodTest {
+
+    public static void main(String args[]) throws InterruptedException {
+//        TestSharedObject testSharedObject = new TestSharedObject();
+//        Thread threada = new Thread(new ThreadA(testSharedObject));
+//        Thread threadb = new Thread(new ThreadB(testSharedObject));
+//        System.out.println("Starting Thread A");
+//        threada.start();
+//        Thread.sleep(1000);
+//        System.out.println("Starting Thread B");
+//        threadb.start();
+
+
+        Thread threada = new Thread(new ThreadA(new TestSharedObject()));
+        Thread threadb = new Thread(new ThreadB(new TestSharedObject()));
+        System.out.println("Starting Thread A");
+        threada.start();
+        Thread.sleep(1000);
+        System.out.println("Starting Thread B");
+        threadb.start();
+    }
+}
+
+
