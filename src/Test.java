@@ -1,20 +1,22 @@
 /**
- * Created by Sabaresh on 5/10/2016.
+ * Created by sabaresh on 2/9/17.
  */
 public class Test {
 
-    public static final void main(String []args) {
-        System.out.println("testing ");
+    public static void main(String[] args) {
+        Test t = new Test();
 
-        MathOperation mathOperation = (int a, int b) -> a+b;
-
-        System.out.println(" sum "+mathOperation.operation(1,2));
-
+        t.integerComparison();
     }
-}
 
-@FunctionalInterface
-interface MathOperation {
-    int operation(int a, int b);
+    private void integerComparison() {
 
+        Integer i = null;
+
+        Integer i1 = 1;
+
+        if(i1.equals(i)){
+            System.out.println("equal ");
+        } else System.out.println("not equal");
+    }
 }

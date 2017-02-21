@@ -7,11 +7,11 @@ public class StringIntern {
 
     public static final void main(String []args) {
 
-        String s3 = new String("Test");
+        String s3 = new String("LambdaTest");
         final String s4 = s3.intern();
 
-        String s1 = "Test";
-        String s2 = "Test";
+        String s1 = "LambdaTest";
+        String s2 = "LambdaTest";
 
         System.out.println(s1 == s2);
         System.out.println(s2 == s3);
