@@ -15,6 +15,27 @@ import static java.util.stream.Collectors.toList;
  */
 public class Java8MapExample {
     public static void main(String args[]) {
+
+        Stream<String> step1 = Stream.of("d2", "a2", "b1", "c")
+                .filter(s -> {
+                    System.out.println("filter: " + s);
+                    return s.startsWith("a");
+                });
+
+        System.out.println("step 1");
+        Stream<String> step2 = step1.map(s -> {
+            System.out.println("map: " + s);
+            return s.toUpperCase();
+        });
+        System.out.println("step 2");
+
+        Stream step3 = step2.sorted((s1, s2) -> {
+            System.out.printf("sort: %s; %s\n", s1, s2);
+            return s1.compareTo(s2);
+        });
+        System.out.println("step 3");
+        step3 .forEach(s -> System.out.println("forEach: " + s));
+
         List<String> cities = Arrays.asList("London", "HongKong", "Paris", "NewYork");
         System.out.println("Original list : " + cities);
         System.out.println("list transformed using Java 8 :" + transform(cities));
