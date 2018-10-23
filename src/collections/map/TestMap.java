@@ -1,5 +1,6 @@
 package collections.map;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,6 +14,10 @@ public class TestMap {
 
             }
         };
+
+        String[][] s = new String[][]{{"s1", "s2"}, {"s3"}};
+
+        Arrays.stream(s).forEach(System.out::println);
     }
 }
 

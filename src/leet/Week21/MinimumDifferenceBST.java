@@ -29,17 +29,19 @@ public class MinimumDifferenceBST {
 
         load(root, data);
 
-//        System.out.println("data : "+data);
+//        System.out.println("data unsorted : "+data);
 
         if(data != null) Collections.sort(data);
 
-        System.out.println("data : "+data);
+//        System.out.println("data : "+data);
 
         int mDiff = 0;
 
         for (int i=0 ; i < data.size() -1 ; i++) {
 
-            if( (data.get(i+1) - data.get(i)) <= mDiff || mDiff ==0 ) mDiff = (data.get(i+1) - data.get(i));
+            if( (data.get(i+1) - data.get(i)) <= mDiff || mDiff ==0 ) {
+                mDiff = (data.get(i+1) - data.get(i));
+            }
         }
 
         return mDiff;

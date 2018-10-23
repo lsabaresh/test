@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
@@ -15,11 +16,11 @@ public class Java8MethodReferences {
     public static final void main(String []args) {
 
         System.out.println("------Constructor-------");
-        final Car car = Car.create( Car::new, "Car 1" );
+        final Car car1 = Car.create( Car::new, "Car 1" );
         final Car car2 = Car.create( Car::new, "Car 2" );
 
         System.out.println("------Static Method reference-------");
-        final List< Car > cars = Arrays.asList( car, car2 );
+        final List< Car > cars = Arrays.asList( car1, car2 );
         cars.forEach( Car::collide );
         cars.forEach( x->Car.collide(x) );
 
@@ -28,16 +29,28 @@ public class Java8MethodReferences {
         cars.forEach( Car::repair );
         cars.forEach( x-> x.repair() );
 
+        System.out.println("Ex 2");
+        System.out.println("Lambda");
+        TriFunction<Sum, String, String, Integer> lambda =
+                (Sum s, String arg1, String arg2) -> s.doSum(arg1, arg1);
+        System.out.println(lambda.apply(new Sum(), "1", "4"));
+
+        System.out.println("Method References:");
+        TriFunction<Sum, String, String, Integer> lambda1  = Sum::doSum;
+        System.out.println(lambda1.apply(new Sum(), "2", "2"));
+
+
         System.out.println("------Method reference on Object-------");
         final Car police = Car.create( Car::new, "New Car" );
-        final Consumer<Car> consumer1 = police::follow;
+        final Consumer<Car> consumer1 = Car::follow;
+
         cars.forEach( police::follow );
         cars.forEach( consumer1 );
         cars.forEach( x -> police.follow(x) );
 
         //System.out.println(cars.size());
 
-        System.out.println("-------------");
+        System.out.println("-------method reference to a constructor.------");
 
         PersonFactory<Person> p1 = ((name, age) -> new Person(name,age));
         System.out.println(p1.create("t1",20));
@@ -45,7 +58,15 @@ public class Java8MethodReferences {
         PersonFactory<Person> p2 = Person::new;
         System.out.println(p2.create("t2",20));
 
-       // Car car1 = Car::new;
+        Supplier<List<String>> s = ArrayList::new;
+
+        s.get();
+
+
+       //------------------------
+
+
+
     }
 }
 
@@ -88,4 +109,14 @@ class Car {
 
 interface PersonFactory<P extends Person> {
     P create(String name, int age);
+}
+
+interface TriFunction<T, U, V, R> {
+    R apply(T t, U u, V v);
+}
+
+class Sum {
+    Integer doSum(String s1, String s2) {
+        return Integer.parseInt(s1) + Integer.parseInt(s1);
+    }
 }

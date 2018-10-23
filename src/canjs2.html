@@ -1,0 +1,38 @@
+
+<html>
+<head>
+    <title>CanJS Test</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="http://canjs.com/release/latest/can.jquery.js"></script>
+    <script src="http://canjs.com/release/latest/can.map.define.js"></script>
+    <script src="http://canjs.com/release/latest/can.stache.js"></script>
+    <script type='text/stache' id='app'>
+   
+    </script>
+    
+    <script type="text/javascript">
+
+        $("body").append(can.view("app",{}));
+        
+        var Person = can.Model.extend({
+    		define: {
+        		fullName: {
+            		get: function () {
+                			return this.attr("first") + " " + this.attr("last");
+            		}
+        		}
+    		}
+		});
+
+		var p = new Person({first: "Justin", last: "Meyer"});
+		p.attr("fullName"); // "Justin Meyer"
+		p.bind("fullName", function(ev, newVal){		
+		  console.log("newVal : "+newVal);
+		});
+		p.attr("first","Lincoln");
+		console.log("fullName1 : "+p.attr("fullName"))
+    </script>
+</body>
+</html>

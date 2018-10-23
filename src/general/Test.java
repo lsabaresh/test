@@ -1,5 +1,7 @@
 package general;
 
+import org.joda.time.DateTime;
+
 import java.util.regex.Pattern;
 
 /**
@@ -12,8 +14,10 @@ public class Test {
     public static void main(String[] args) {
         Test t = new Test();
 //        t.fileExtensionTest();
-        t.patternTest();
-
+//        t.patternTest();
+//        instanceOfTest();
+//        dateTime();
+        integerTest();
     }
 
     public void fileExtensionTest() {
@@ -53,5 +57,29 @@ public class Test {
 
     public boolean matches(String value) {
         return value != null && staticResourcePattern.matcher(value).matches();
+    }
+
+    public static void instanceOfTest() {
+
+        String s = "";
+
+        System.out.println(s instanceof String);
+    }
+
+
+    public static void dateTime() {
+        DateTime d = DateTime.now();
+        System.out.println(d);
+        System.out.println(d.plusDays(7));
+        System.out.println(d.plusDays(7));
+    }
+
+    private static void integerTest() {
+
+        Integer i = null;
+
+        int v = i;
+
+        System.out.println(v);
     }
 }

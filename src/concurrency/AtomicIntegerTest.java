@@ -1,6 +1,7 @@
 package concurrency;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -53,6 +54,8 @@ public class AtomicIntegerTest {
                     list1.add(executor.submit(task));
                 });
 
+        Callable r = atomicInt::incrementAndGet;
+
         list1.forEach(future ->  {
             try {
                 System.out.println( future.get());
@@ -87,5 +90,9 @@ public class AtomicIntegerTest {
 
         System.out.println("atomicInt2 "+atomicInt2.get());
         executor.shutdown();
+
+        HashMap m = new HashMap();
+
+
     }
 }

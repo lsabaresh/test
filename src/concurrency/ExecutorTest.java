@@ -37,6 +37,16 @@ public class ExecutorTest {
             e.printStackTrace();
         }
 
+
+        try {
+            System.out.println(executor.invokeAny(callables));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
         executor.shutdown();
     }
 }
