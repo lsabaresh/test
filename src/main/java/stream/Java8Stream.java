@@ -45,6 +45,7 @@ public class Java8Stream {
         veriableArgs("s");
 
 
+
     }
 
     public void test(Function<String, String>... filters) {

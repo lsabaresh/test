@@ -1,7 +1,5 @@
 package general;
 
-import com.sun.istack.internal.NotNull;
-
 import java.util.*;
 
 /**
@@ -40,7 +38,7 @@ public class TestMap {
 
         aMap.forEach((key, value)-> System.out.println(" Key "+key+", Value : "+value));
 
-        @NotNull String s = null;
+//        @NotNull String s = null;
 
         Collections.emptyList();
 

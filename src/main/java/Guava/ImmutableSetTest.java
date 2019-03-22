@@ -29,7 +29,7 @@ public class ImmutableSetTest {
 
         HashSet<Foo> foos = new HashSet<>(Arrays.asList(new Foo("a")));
 
-        Set<Foo> guava1 = ImmutableSet.copyOf(foos);
+        ImmutableSet<Foo> guava1 = ImmutableSet.copyOf(foos);
         Set<Foo> builtIn1 = Collections.unmodifiableSet(foos);
 
         guava1.iterator().next().setA("b");
@@ -37,6 +37,15 @@ public class ImmutableSetTest {
 
         builtIn1.iterator().next().setA("c");
         System.out.println(foos.iterator().next().getA()); // changed from b to c
+
+
+        HashSet<String> stringSet = new HashSet<>(Arrays.asList("saba", "rajini"));
+        HashSet<String> stringSet2 = stringSet;
+
+        stringSet2.add("sundeep");
+
+        System.out.println();
+
 
     }
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="AppleID-Unit-Tests">
+
+    <test name="auth-interceptor">
+        <classes>
+            <class name="com.Test1"/>
+            <class name="com.Test2"/>
+        </classes>
+    </test>
+
+</suite>

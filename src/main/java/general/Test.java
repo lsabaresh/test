@@ -1,7 +1,10 @@
 package general;
 
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 /**
@@ -17,8 +20,11 @@ public class Test {
 //        t.patternTest();
 //        instanceOfTest();
 //        dateTime();
-        integerTest();
+//        integerTest();
+//        subStringTest();
+        entrySetTest();
     }
+
 
     public void fileExtensionTest() {
         System.out.println(checkFileExtension("")==false);
@@ -81,5 +87,34 @@ public class Test {
         int v = i;
 
         System.out.println(v);
+    }
+
+    private static void entrySetTest() {
+        Map<String, String> m = new HashMap<>();
+
+        System.out.println(m.entrySet());
+
+    }
+
+
+    private static void subStringTest() {
+
+        String s = "ManageAccountupdateName";
+
+        int index = s.indexOf("Controller");
+        System.out.println("Sub String : "+s.substring(0, index != -1 ? index : s.length()));
+//        System.out.println("Sub String : "+ StringUtils.substring(s, 0, s.indexOf("Controller")));
+
+        String [] chunks = StringUtils.splitByCharacterTypeCamelCase(s.substring(0, index != -1 ? index : s.length()));
+
+        StringBuilder key = new StringBuilder(s.length());
+
+        for(String chunk: chunks) {
+            key.append("_");
+            key.append(chunk.toUpperCase());
+        }
+
+        System.out.println("key : "+key);
+        System.out.println("key : "+key.toString().toUpperCase());
     }
 }

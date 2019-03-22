@@ -28,7 +28,7 @@ import static java.lang.System.*;
 /**
  * Example use of java.nio to read a file.
  * <p/>
- * Requires a test file of approximately 29K called E:\temp\tempin.txt
+ * Requires a com file of approximately 29K called E:\temp\tempin.txt
  *
  * @author Roedy Green, Canadian Mind Products
  * @version 1.0 2009-01-01 initial version
@@ -100,7 +100,7 @@ public class TestNioRead
     }
 
     /**
-     * test harness
+     * com harness
      *
      * @param args not used
      *

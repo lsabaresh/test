@@ -9,7 +9,7 @@ public class InputStreamDemo {
         BufferedInputStream bis = null;
         try{
             // new input stream created
-            is = new FileInputStream("F://test.txt");
+            is = new FileInputStream("F://com.txt");
 
              bis = new BufferedInputStream(is);
 

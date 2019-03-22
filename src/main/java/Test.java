@@ -22,7 +22,12 @@ public class Test {
 
 //        testEmptySet1();
 
-        invalidFile();
+//        invalidFile();
+
+
+        String[] a = "".split("/");
+
+        System.out.printf("a.length = "+a.length);
 
 
     }
@@ -84,7 +89,7 @@ public class Test {
 
     private static void invalidFile() {
 
-        File file = new File("/Users/sabaresh/Documents/work/workspace/apple_git/gdpr-services/src/main/resources/META-INF/test.yml");
+        File file = new File("/Users/sabaresh/Documents/work/workspace/apple_git/gdpr-services/src/main/resources/META-INF/com.yml");
 
         System.out.println(file.exists());
     }
