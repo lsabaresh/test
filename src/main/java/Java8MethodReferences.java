@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.StringJoiner;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.IntFunction;
 import java.util.function.Supplier;
 import stream.Person;
 
@@ -20,7 +21,7 @@ public class Java8MethodReferences {
         final Car car2 = Car.create( Car::new, "Car 2" );
 
         System.out.println("------Static Method reference-------");
-        final List< Car > cars = Arrays.asList( car1, car2 );
+        final List< Car > cars = Arrays.asList(car1, car2);
         cars.forEach( Car::collide );
         cars.forEach( x->Car.collide(x) );
 
@@ -62,6 +63,7 @@ public class Java8MethodReferences {
 
         s.get();
 
+        IntFunction a = i -> 1;
 
        //------------------------
 

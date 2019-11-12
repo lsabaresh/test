@@ -3,7 +3,7 @@ package general;
 public class BitTest {
 
     public static void main(String[] args) {
-
+        System.out.println(" Bitwise value " + (10 >> 1)); // Multiplication -> 10 * 1^2   10/2
         System.out.println(" Bitwise value " + (5 << 2)); // Multiplication -> 5 * 2^2
         System.out.println(" Bitwise value " + (8 >> 2)); // Division -> 8 / 2^2
         System.out.println(((100 & 1) == 0) ? "Even " : "Odd"); // To decide odd or even

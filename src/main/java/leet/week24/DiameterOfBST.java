@@ -1,9 +1,6 @@
 package leet.week24;
 
-import leet.TreeNode;
-
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
+import datastructure.tree.TreeNode;
 
 /**
  * Created by sabaresh on 3/18/17.

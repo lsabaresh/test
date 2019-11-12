@@ -4,6 +4,7 @@ import org.apache.commons.lang3.BooleanUtils;
 
 import java.io.File;
 import java.util.*;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -25,11 +26,30 @@ public class Test {
 //        invalidFile();
 
 
+
+
+
         String[] a = "".split("/");
 
-        System.out.printf("a.length = "+a.length);
+        System.out.println("a.length = " + a.length);
+
+        System.out.println(-10 - -3);
+
+        Function<String, Integer> f1 = String::length;
+
+        Function<String, Integer> f2 = c -> c.length();
+
+        Function f = t.getFunction(String::length);
+
+        t.getFunction((String s) -> s.length());
+
+//        System.out.println(f.apply(""));
 
 
+    }
+
+    public <T, R> Function getFunction(Function<T, R> f) {
+        return f;
     }
 
     private void integerComparison() {
